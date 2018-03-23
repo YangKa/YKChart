@@ -6,11 +6,12 @@
 //  Copyright © 2018年 yangka. All rights reserved.
 //
 
-#import "CircleView.h"
-#import "PieView.h"
-#import "LoopView.h"
+#import "YKCircleView.h"
+#import "YKPieView.h"
+#import "YKLoopView.h"
+#import "YKTouchResponderView.h"
 
-@interface CircleView(){
+@interface YKCircleView(){
     
     CGRect _drawRect;
     CGRect _contentRect;
@@ -30,7 +31,7 @@
 
 #define RandomColor [UIColor colorWithRed:(arc4random_uniform(255)/255.0) green:(arc4random_uniform(255)/255.0) blue:(arc4random_uniform(255)/255.0) alpha:1]
 
-@implementation CircleView
+@implementation YKCircleView
 
 - (instancetype)initWithFrame:(CGRect)frame pieList:(NSArray*)pieList pieColors:(NSArray*)pieColors loopList:(NSArray*)loopList loopColors:(NSArray*)loopColors
 {
@@ -69,11 +70,11 @@
     if (_pieList > 0){
         
         for (int i = 0; i<_pieList.count; i++) {
-            DataModel *model = _pieList[i];
+            YKDataModel *model = _pieList[i];
             pieTotal += model.value;
         }
         
-        [_pieList enumerateObjectsUsingBlock:^(DataModel *model, NSUInteger idx, BOOL * _Nonnull stop) {
+        [_pieList enumerateObjectsUsingBlock:^(YKDataModel *model, NSUInteger idx, BOOL * _Nonnull stop) {
             NSLog(@"----_pieList");
             model.total = pieTotal;
         }];
@@ -83,11 +84,11 @@
     CGFloat loopTotal = 0;
     if (_loopList.count > 0){
         for (int i = 0; i<_loopList.count; i++) {
-            DataModel *model = _loopList[i];
+            YKDataModel *model = _loopList[i];
             loopTotal += model.value;
         }
         
-        [_loopList enumerateObjectsUsingBlock:^(DataModel *model, NSUInteger idx, BOOL * _Nonnull stop) {
+        [_loopList enumerateObjectsUsingBlock:^(YKDataModel *model, NSUInteger idx, BOOL * _Nonnull stop) {
             model.total = loopTotal;
             NSLog(@"----_loopList");
         }];
@@ -119,18 +120,21 @@
     [self addDrawContext];
     //draw text
     [self addContentContext];
+    
+    YKTouchResponderView *responderView = [[YKTouchResponderView alloc] initWithFrame:self.bounds];
+    [self addSubview:responderView];
 }
 
 
 - (void)addDrawContext{
     
-    LoopView *loopView = [[LoopView alloc] initWithFrame:_drawRect lineWidth:30 models:_loopList colors:_loopColors];
+    YKLoopView *loopView = [[YKLoopView alloc] initWithFrame:_drawRect lineWidth:30 models:_loopList colors:_loopColors];
     [self addSubview:loopView];
     
     CGFloat radius = _drawRect.size.width/2 - 50;
     CGRect pieRect = CGRectMake(CGRectGetMidX(_drawRect) - radius, CGRectGetMidY(_drawRect) - radius, 2*radius, 2*radius);
     
-    PieView *pieView = [[PieView alloc] initWithFrame:pieRect models:_pieList colors:_pieColors];
+    YKPieView *pieView = [[YKPieView alloc] initWithFrame:pieRect models:_pieList colors:_pieColors];
     [self addSubview:pieView];
 }
 
@@ -145,7 +149,7 @@
     NSUInteger rows = models.count/2 + models.count%2;
     CGFloat margin  = 30;
     CGFloat originY = CGRectGetMaxY(_drawRect) + 20;
-    CGFloat width  = (_contentRect.size.width - margin)/2;
+    CGFloat width  = (_contentRect.size.width - 2*margin)/2;
     CGFloat height = (_contentRect.size.height - 80)/rows;
     
     for (int row = 0; row < rows; row++) {
@@ -154,7 +158,7 @@
         for ( int j =0 ; j < 2; j++) {
             
             NSUInteger index = 2*row + j;
-            DataModel *model = models[index];
+            YKDataModel *model = models[index];
             UIView *cellView = [[UIView alloc] initWithFrame:CGRectMake((margin + width)*j, Y, width, height)];
             [self addSubview:cellView];
             

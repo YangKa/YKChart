@@ -13,12 +13,15 @@
 		70FAB6522063F1E3000DD595 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70FAB6512063F1E3000DD595 /* Assets.xcassets */; };
 		70FAB6552063F1E3000DD595 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FAB6532063F1E3000DD595 /* LaunchScreen.storyboard */; };
 		70FAB6582063F1E3000DD595 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB6572063F1E3000DD595 /* main.m */; };
-		70FAB66B2063F2A1000DD595 /* AngleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB6612063F2A1000DD595 /* AngleTool.m */; };
-		70FAB66C2063F2A1000DD595 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB6632063F2A1000DD595 /* CircleView.m */; };
-		70FAB66D2063F2A1000DD595 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB6662063F2A1000DD595 /* DataModel.m */; };
-		70FAB66E2063F2A1000DD595 /* LoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB6692063F2A1000DD595 /* LoopView.m */; };
-		70FAB66F2063F2A1000DD595 /* PieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB66A2063F2A1000DD595 /* PieView.m */; };
+		70FAB66B2063F2A1000DD595 /* YKAngleTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB6612063F2A1000DD595 /* YKAngleTool.m */; };
+		70FAB66C2063F2A1000DD595 /* YKCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB6632063F2A1000DD595 /* YKCircleView.m */; };
+		70FAB66D2063F2A1000DD595 /* YKDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB6662063F2A1000DD595 /* YKDataModel.m */; };
+		70FAB66E2063F2A1000DD595 /* YKLoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB6692063F2A1000DD595 /* YKLoopView.m */; };
+		70FAB66F2063F2A1000DD595 /* YKPieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB66A2063F2A1000DD595 /* YKPieView.m */; };
 		70FAB6722063F2BE000DD595 /* CircleChartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB6712063F2BE000DD595 /* CircleChartController.m */; };
+		70FAB67620649AD7000DD595 /* YKTouchResponderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB67520649AD7000DD595 /* YKTouchResponderView.m */; };
+		70FAB6792064A81E000DD595 /* YKPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB6782064A81E000DD595 /* YKPieChart.m */; };
+		70FAB67C2064AC3D000DD595 /* PieChartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB67B2064AC3D000DD595 /* PieChartController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,18 +35,24 @@
 		70FAB6542063F1E3000DD595 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70FAB6562063F1E3000DD595 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		70FAB6572063F1E3000DD595 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		70FAB6612063F2A1000DD595 /* AngleTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AngleTool.m; sourceTree = "<group>"; };
-		70FAB6622063F2A1000DD595 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
-		70FAB6632063F2A1000DD595 /* CircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleView.m; sourceTree = "<group>"; };
-		70FAB6642063F2A1000DD595 /* LoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoopView.h; sourceTree = "<group>"; };
-		70FAB6652063F2A1000DD595 /* PieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieView.h; sourceTree = "<group>"; };
-		70FAB6662063F2A1000DD595 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
-		70FAB6672063F2A1000DD595 /* AngleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AngleTool.h; sourceTree = "<group>"; };
-		70FAB6682063F2A1000DD595 /* CircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleView.h; sourceTree = "<group>"; };
-		70FAB6692063F2A1000DD595 /* LoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoopView.m; sourceTree = "<group>"; };
-		70FAB66A2063F2A1000DD595 /* PieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieView.m; sourceTree = "<group>"; };
+		70FAB6612063F2A1000DD595 /* YKAngleTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKAngleTool.m; sourceTree = "<group>"; };
+		70FAB6622063F2A1000DD595 /* YKDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKDataModel.h; sourceTree = "<group>"; };
+		70FAB6632063F2A1000DD595 /* YKCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKCircleView.m; sourceTree = "<group>"; };
+		70FAB6642063F2A1000DD595 /* YKLoopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKLoopView.h; sourceTree = "<group>"; };
+		70FAB6652063F2A1000DD595 /* YKPieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKPieView.h; sourceTree = "<group>"; };
+		70FAB6662063F2A1000DD595 /* YKDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKDataModel.m; sourceTree = "<group>"; };
+		70FAB6672063F2A1000DD595 /* YKAngleTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKAngleTool.h; sourceTree = "<group>"; };
+		70FAB6682063F2A1000DD595 /* YKCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKCircleView.h; sourceTree = "<group>"; };
+		70FAB6692063F2A1000DD595 /* YKLoopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKLoopView.m; sourceTree = "<group>"; };
+		70FAB66A2063F2A1000DD595 /* YKPieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKPieView.m; sourceTree = "<group>"; };
 		70FAB6702063F2BE000DD595 /* CircleChartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleChartController.h; sourceTree = "<group>"; };
 		70FAB6712063F2BE000DD595 /* CircleChartController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleChartController.m; sourceTree = "<group>"; };
+		70FAB67420649AD7000DD595 /* YKTouchResponderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKTouchResponderView.h; sourceTree = "<group>"; };
+		70FAB67520649AD7000DD595 /* YKTouchResponderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKTouchResponderView.m; sourceTree = "<group>"; };
+		70FAB6772064A81E000DD595 /* YKPieChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKPieChart.h; sourceTree = "<group>"; };
+		70FAB6782064A81E000DD595 /* YKPieChart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKPieChart.m; sourceTree = "<group>"; };
+		70FAB67A2064AC3D000DD595 /* PieChartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PieChartController.h; sourceTree = "<group>"; };
+		70FAB67B2064AC3D000DD595 /* PieChartController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PieChartController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +85,7 @@
 		70FAB6472063F1E2000DD595 /* YKChart */ = {
 			isa = PBXGroup;
 			children = (
+				70FAB67320649644000DD595 /* PieChart */,
 				70FAB6602063F2A1000DD595 /* CircleChart */,
 				70FAB65E2063F23D000DD595 /* Chart */,
 				70FAB6482063F1E3000DD595 /* AppDelegate.h */,
@@ -96,6 +106,8 @@
 			children = (
 				70FAB6702063F2BE000DD595 /* CircleChartController.h */,
 				70FAB6712063F2BE000DD595 /* CircleChartController.m */,
+				70FAB67A2064AC3D000DD595 /* PieChartController.h */,
+				70FAB67B2064AC3D000DD595 /* PieChartController.m */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -103,18 +115,29 @@
 		70FAB6602063F2A1000DD595 /* CircleChart */ = {
 			isa = PBXGroup;
 			children = (
-				70FAB6612063F2A1000DD595 /* AngleTool.m */,
-				70FAB6622063F2A1000DD595 /* DataModel.h */,
-				70FAB6632063F2A1000DD595 /* CircleView.m */,
-				70FAB6642063F2A1000DD595 /* LoopView.h */,
-				70FAB6652063F2A1000DD595 /* PieView.h */,
-				70FAB6662063F2A1000DD595 /* DataModel.m */,
-				70FAB6672063F2A1000DD595 /* AngleTool.h */,
-				70FAB6682063F2A1000DD595 /* CircleView.h */,
-				70FAB6692063F2A1000DD595 /* LoopView.m */,
-				70FAB66A2063F2A1000DD595 /* PieView.m */,
+				70FAB6612063F2A1000DD595 /* YKAngleTool.m */,
+				70FAB6672063F2A1000DD595 /* YKAngleTool.h */,
+				70FAB6682063F2A1000DD595 /* YKCircleView.h */,
+				70FAB6632063F2A1000DD595 /* YKCircleView.m */,
+				70FAB6622063F2A1000DD595 /* YKDataModel.h */,
+				70FAB6662063F2A1000DD595 /* YKDataModel.m */,
+				70FAB6642063F2A1000DD595 /* YKLoopView.h */,
+				70FAB6692063F2A1000DD595 /* YKLoopView.m */,
+				70FAB6652063F2A1000DD595 /* YKPieView.h */,
+				70FAB66A2063F2A1000DD595 /* YKPieView.m */,
 			);
 			path = CircleChart;
+			sourceTree = "<group>";
+		};
+		70FAB67320649644000DD595 /* PieChart */ = {
+			isa = PBXGroup;
+			children = (
+				70FAB67420649AD7000DD595 /* YKTouchResponderView.h */,
+				70FAB67520649AD7000DD595 /* YKTouchResponderView.m */,
+				70FAB6772064A81E000DD595 /* YKPieChart.h */,
+				70FAB6782064A81E000DD595 /* YKPieChart.m */,
+			);
+			path = PieChart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,14 +212,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				70FAB64D2063F1E3000DD595 /* ViewController.m in Sources */,
-				70FAB66C2063F2A1000DD595 /* CircleView.m in Sources */,
+				70FAB66C2063F2A1000DD595 /* YKCircleView.m in Sources */,
 				70FAB6582063F1E3000DD595 /* main.m in Sources */,
+				70FAB67C2064AC3D000DD595 /* PieChartController.m in Sources */,
 				70FAB64A2063F1E3000DD595 /* AppDelegate.m in Sources */,
-				70FAB66B2063F2A1000DD595 /* AngleTool.m in Sources */,
+				70FAB6792064A81E000DD595 /* YKPieChart.m in Sources */,
+				70FAB67620649AD7000DD595 /* YKTouchResponderView.m in Sources */,
+				70FAB66B2063F2A1000DD595 /* YKAngleTool.m in Sources */,
 				70FAB6722063F2BE000DD595 /* CircleChartController.m in Sources */,
-				70FAB66F2063F2A1000DD595 /* PieView.m in Sources */,
-				70FAB66D2063F2A1000DD595 /* DataModel.m in Sources */,
-				70FAB66E2063F2A1000DD595 /* LoopView.m in Sources */,
+				70FAB66F2063F2A1000DD595 /* YKPieView.m in Sources */,
+				70FAB66D2063F2A1000DD595 /* YKDataModel.m in Sources */,
+				70FAB66E2063F2A1000DD595 /* YKLoopView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

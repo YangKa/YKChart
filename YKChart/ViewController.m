@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "CircleChartController.h"
+#import "PieChartController.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -33,7 +34,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 2;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -44,15 +45,26 @@
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-    cell.textLabel.text = @"图表一";
+    
+    if (indexPath.row == 0) {
+        cell.textLabel.text = @"图表一";
+    }else if (indexPath.row == 1){
+        cell.textLabel.text = @"图表二";
+    }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    CircleChartController *chartVC1 = [[CircleChartController alloc] init];
-    [self presentViewController:chartVC1 animated:YES completion:nil];
+    if (indexPath.row == 0) {
+        CircleChartController *chartVC1 = [[CircleChartController alloc] init];
+        [self presentViewController:chartVC1 animated:YES completion:nil];
+    }else if (indexPath.row == 1){
+        PieChartController *chartVC2 = [[PieChartController alloc] init];
+        [self presentViewController:chartVC2 animated:YES completion:nil];
+    }
+   
 }
 
 

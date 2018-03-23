@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface DataModel : NSObject
+@interface YKDataModel : NSObject
 
 @property (nonatomic, copy) NSString* name;
 

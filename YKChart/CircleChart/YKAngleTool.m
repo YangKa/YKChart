@@ -6,9 +6,9 @@
 //  Copyright © 2018年 yangka. All rights reserved.
 //
 
-#import "AngleTool.h"
+#import "YKAngleTool.h"
 
-@implementation AngleTool
+@implementation YKAngleTool
 
 + (CGFloat)angleForValue:(CGFloat)value{
     value = 360 + (value - 90);

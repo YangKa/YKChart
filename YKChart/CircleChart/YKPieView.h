@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PieView : UIView
+@interface YKPieView : UIView
 
 - (instancetype)initWithFrame:(CGRect)frame models:(NSArray*)models colors:(NSArray*)colors;
 

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface AngleTool : NSObject
+@interface YKAngleTool : NSObject
 
 + (CGFloat)angleForValue:(CGFloat)value;
 

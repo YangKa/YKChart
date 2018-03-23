@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DataModel.h"
+#import "YKDataModel.h"
 
 
-@interface CircleView : UIView
+@interface YKCircleView : UIView
 
 - (instancetype)initWithFrame:(CGRect)frame
                       pieList:(NSArray*)pieList

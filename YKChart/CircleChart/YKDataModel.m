@@ -6,9 +6,9 @@
 //  Copyright © 2018年 yangka. All rights reserved.
 //
 
-#import "DataModel.h"
+#import "YKDataModel.h"
 
-@implementation DataModel
+@implementation YKDataModel
 
 - (CGFloat)ratio{
     if (self.value == 0 || self.total == 0) {

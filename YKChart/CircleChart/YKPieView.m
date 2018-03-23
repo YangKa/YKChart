@@ -6,11 +6,11 @@
 //  Copyright © 2018年 yangka. All rights reserved.
 //
 
-#import "PieView.h"
-#import "AngleTool.h"
-#import "DataModel.h"
+#import "YKPieView.h"
+#import "YKAngleTool.h"
+#import "YKDataModel.h"
 
-@interface PieView(){
+@interface YKPieView(){
     
     NSArray *_models;
     NSArray *_colors;
@@ -18,19 +18,7 @@
 
 @end
 
-CGFloat angleForValue(CGFloat value) {
-    value = 360 + (value - 90);
-    return value*(M_PI/180);
-}
-
-CGPoint positionForCenter(CGPoint center, CGFloat radius, CGFloat angle){
-    CGFloat x = radius*cosf(angle);
-    CGFloat y = radius*sinf(angle);
-    
-    return CGPointMake(center.x + x, center.y + y);
-}
-
-@implementation PieView
+@implementation YKPieView
 
 - (instancetype)initWithFrame:(CGRect)frame models:(NSArray*)models colors:(NSArray*)colors
 {
@@ -56,11 +44,11 @@ CGPoint positionForCenter(CGPoint center, CGFloat radius, CGFloat angle){
     CGFloat start = 0;
     for (int i = 0; i< _models.count; i++) {
        
-        DataModel *model = _models[i];
+        YKDataModel *model = _models[i];
     
-        CGFloat startAngle = [AngleTool angleForValue:start];
+        CGFloat startAngle = [YKAngleTool angleForValue:start];
         start += model.angle;
-        CGFloat endAngle  = [AngleTool angleForValue:start];
+        CGFloat endAngle  = [YKAngleTool angleForValue:start];
         
         CAShapeLayer *shapeLayer = [CAShapeLayer layer];
         shapeLayer.frame = self.bounds;
@@ -80,7 +68,7 @@ CGPoint positionForCenter(CGPoint center, CGFloat radius, CGFloat angle){
         
         //name
         CGFloat angle = startAngle + (endAngle - startAngle)/2;
-        CGPoint point = [AngleTool positionForCenter:center radius:radius*0.5 angle:angle];
+        CGPoint point = [YKAngleTool positionForCenter:center radius:radius*0.5 angle:angle];
 
         CATextLayer *textLayer = [CATextLayer layer];
         textLayer.string = model.name;

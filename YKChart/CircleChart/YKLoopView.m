@@ -6,11 +6,11 @@
 //  Copyright © 2018年 yangka. All rights reserved.
 //
 
-#import "LoopView.h"
-#import "AngleTool.h"
-#import "DataModel.h"
+#import "YKLoopView.h"
+#import "YKAngleTool.h"
+#import "YKDataModel.h"
 
-@interface LoopView(){
+@interface YKLoopView(){
     
     CGFloat _lineWidth;
     NSArray *_models;
@@ -20,7 +20,7 @@
 @end
 
 
-@implementation LoopView
+@implementation YKLoopView
 
 - (instancetype)initWithFrame:(CGRect)frame lineWidth:(CGFloat)lineWidth models:(NSArray*)models colors:(NSArray*)colors
 {
@@ -46,11 +46,11 @@
     CGFloat start = 0;
     for (int i = 0; i < _models.count; i++) {
         
-        DataModel *model = _models[i];
+        YKDataModel *model = _models[i];
         
-        CGFloat startAngle = [AngleTool angleForValue:start];
+        CGFloat startAngle = [YKAngleTool angleForValue:start];
         start += model.angle;
-        CGFloat endAngle  = [AngleTool angleForValue:start];
+        CGFloat endAngle  = [YKAngleTool angleForValue:start];
         
         CAShapeLayer *shapeLayer = [CAShapeLayer layer];
         shapeLayer.frame = self.bounds;
@@ -72,7 +72,7 @@
         BOOL isLeft = ( angle > 7.853982);
         
         //折线
-        CGPoint point1 = [AngleTool positionForCenter:center radius:radius angle:angle];
+        CGPoint point1 = [YKAngleTool positionForCenter:center radius:radius angle:angle];
         CAShapeLayer *lineLayer = [CAShapeLayer layer];
         lineLayer.frame = CGRectMake(point1.x - 15, point1.y - 15, 30, 30);
         lineLayer.fillColor = nil;
@@ -82,7 +82,7 @@
         UIBezierPath *path1 = [UIBezierPath bezierPath];
         [path1 moveToPoint:CGPointMake(15, 15)];
         
-        CGPoint point2 = [AngleTool positionForCenter:CGPointMake(15, 15) radius:12 angle:angle];
+        CGPoint point2 = [YKAngleTool positionForCenter:CGPointMake(15, 15) radius:12 angle:angle];
         [path1 addLineToPoint:point2];
         if (isLeft) {
             [path1 addLineToPoint:CGPointMake(point2.x - 15 , point2.y)];
@@ -104,7 +104,7 @@
         textLayer.foregroundColor = [UIColor whiteColor].CGColor;
         [shapeLayer addSublayer:textLayer];
         
-        CGPoint point4 = [AngleTool positionForCenter:center radius:radius+15 angle:angle];
+        CGPoint point4 = [YKAngleTool positionForCenter:center radius:radius+15 angle:angle];
         if (isLeft) {
             CGPoint point5 = CGPointMake(point4.x - 20, point4.y);
             textLayer.frame = CGRectMake(point5.x - 55, point5.y - 13, 55, 26);

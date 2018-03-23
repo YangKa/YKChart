@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoopView : UIView
+@interface YKLoopView : UIView
 
 
 - (instancetype)initWithFrame:(CGRect)frame lineWidth:(CGFloat)lineWidth models:(NSArray*)models colors:(NSArray*)colors;
