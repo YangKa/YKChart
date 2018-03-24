@@ -17,6 +17,9 @@
                     pieColors:(NSArray*)pieColors
                      loopList:(NSArray*)loopList
                    loopColors:(NSArray*)loopColors;
+
+- (void)resetPieList:(NSArray*)pieList pieColors:(NSArray*)pieColors loopList:(NSArray*)loopList loopColors:(NSArray*)loopColors;
+
 - (void)display;
 
 @end

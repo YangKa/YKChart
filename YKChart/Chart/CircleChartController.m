@@ -9,7 +9,9 @@
 #import "CircleChartController.h"
 #import "YKCircleView.h"
 
-@interface CircleChartController ()
+@interface CircleChartController (){
+    YKCircleView *circleView;
+}
 
 @end
 
@@ -29,7 +31,7 @@
         [list1 addObject:model];
     }
     
-    YKCircleView *circleView = [[YKCircleView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width)
+    circleView = [[YKCircleView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width)
                                                        pieList:list1
                                                      pieColors:nil
                                                       loopList:list1
@@ -40,14 +42,36 @@
     [circleView display];
     
     //
+    UIButton *button1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+    button1.backgroundColor = [UIColor blueColor];
+    button1.center = CGPointMake(100, self.view.frame.size.height - 60);
+    [button1 setTitle:@"Dismiss" forState:UIControlStateNormal];
+    [button1 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button1 addTarget:self action:@selector(refresh) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button1];
+    
     UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
     button.backgroundColor = [UIColor blueColor];
-    button.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height - 60);
+    button.center = CGPointMake(self.view.frame.size.width - 100, self.view.frame.size.height - 60);
     [button setTitle:@"Dismiss" forState:UIControlStateNormal];
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(dimisss) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
 }
+
+- (void)refresh{
+    NSMutableArray *list1 = [NSMutableArray array];
+    NSArray *values = @[@10, @20, @40, @30];
+    NSArray *titles = @[@"课程一", @"课程二", @"分课程三", @"课程四"];
+    for (int i =0; i<values.count; i++) {
+        YKDataModel *model = [[YKDataModel alloc] init];
+        model.name = titles[i];
+        model.value = [values[i] floatValue];
+        [list1 addObject:model];
+    }
+    [circleView resetPieList:list1 pieColors:nil loopList:list1 loopColors:nil];
+}
+
 
 - (void)dimisss{
     [self dismissViewControllerAnimated:YES completion:nil];

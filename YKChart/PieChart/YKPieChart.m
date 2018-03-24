@@ -39,35 +39,47 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        
-        _titles = [titles copy];
-        _values = [values copy];
-        
-        if ((_titles.count > 0 && _values.count > 0)
-            &&_titles.count == _values.count) {
-            
-            if (colors.count < _titles.count) {
-                _colors = [NSMutableArray array];
-                for (int i = 0; i<_titles.count; i++) {
-                    [_colors addObject:RandomColor];
-                }
-            }else{
-                _colors = [NSMutableArray arrayWithArray:colors];
-            }
-            
-            _centerPoint = CGPointMake(Radius, Radius);
-            _circleRect = CGRectMake(self.frame.size.width/2-Radius, OFFSet, 2*Radius, 2*Radius);
-            _totalValue = 0;
-            _showIndex = -1;
-            _pieLayers = [NSMutableArray array];
-            
-            [self draw];
-            [self addContentContext];
-            [self addResponderLayer];
-        }
+        [self resetTitles:titles values:values colors:colors];
     }
     return self;
 }
+
+- (void)resetTitles:(NSArray*)titles values:(NSArray*)values colors:(NSArray*)colors{
+    
+    for (UIView *subView in  self.subviews) {
+        [subView removeFromSuperview];
+    }
+    for (CALayer *layer  in self.layer.sublayers) {
+        [layer removeFromSuperlayer];
+    }
+    
+    _titles = [titles copy];
+    _values = [values copy];
+    
+    if ((_titles.count > 0 && _values.count > 0)
+        &&_titles.count == _values.count) {
+        
+        if (colors.count < _titles.count) {
+            _colors = [NSMutableArray array];
+            for (int i = 0; i<_titles.count; i++) {
+                [_colors addObject:RandomColor];
+            }
+        }else{
+            _colors = [NSMutableArray arrayWithArray:colors];
+        }
+        
+        _centerPoint = CGPointMake(Radius, Radius);
+        _circleRect = CGRectMake(self.frame.size.width/2-Radius, OFFSet, 2*Radius, 2*Radius);
+        _totalValue = 0;
+        _showIndex = -1;
+        _pieLayers = [NSMutableArray array];
+        
+        [self draw];
+        [self addContentContext];
+        [self addResponderLayer];
+    }
+}
+
 
 - (void)addResponderLayer{
     

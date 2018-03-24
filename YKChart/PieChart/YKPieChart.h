@@ -12,5 +12,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame titles:(NSArray*)titles values:(NSArray*)values colors:(NSArray*)colors;
 
+- (void)resetTitles:(NSArray*)titles values:(NSArray*)values colors:(NSArray*)colors;
+
 
 @end

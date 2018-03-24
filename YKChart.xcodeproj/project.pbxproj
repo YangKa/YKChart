@@ -22,6 +22,11 @@
 		70FAB67620649AD7000DD595 /* YKTouchResponderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB67520649AD7000DD595 /* YKTouchResponderView.m */; };
 		70FAB6792064A81E000DD595 /* YKPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB6782064A81E000DD595 /* YKPieChart.m */; };
 		70FAB67C2064AC3D000DD595 /* PieChartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB67B2064AC3D000DD595 /* PieChartController.m */; };
+		70FAB67F2064E0F9000DD595 /* LineChartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB67E2064E0F9000DD595 /* LineChartController.m */; };
+		70FAB6832064EAC1000DD595 /* YKLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB6822064EAC1000DD595 /* YKLineChart.m */; };
+		70FAB6862064EB93000DD595 /* YKLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB6852064EB93000DD595 /* YKLine.m */; };
+		70FAB6892064EFC1000DD595 /* YKVerticalAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB6882064EFC1000DD595 /* YKVerticalAxis.m */; };
+		70FAB68C2064EFFD000DD595 /* YKHorizontalAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB68B2064EFFD000DD595 /* YKHorizontalAxis.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +58,16 @@
 		70FAB6782064A81E000DD595 /* YKPieChart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKPieChart.m; sourceTree = "<group>"; };
 		70FAB67A2064AC3D000DD595 /* PieChartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PieChartController.h; sourceTree = "<group>"; };
 		70FAB67B2064AC3D000DD595 /* PieChartController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PieChartController.m; sourceTree = "<group>"; };
+		70FAB67D2064E0F9000DD595 /* LineChartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineChartController.h; sourceTree = "<group>"; };
+		70FAB67E2064E0F9000DD595 /* LineChartController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LineChartController.m; sourceTree = "<group>"; };
+		70FAB6812064EAC1000DD595 /* YKLineChart.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKLineChart.h; sourceTree = "<group>"; };
+		70FAB6822064EAC1000DD595 /* YKLineChart.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKLineChart.m; sourceTree = "<group>"; };
+		70FAB6842064EB93000DD595 /* YKLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKLine.h; sourceTree = "<group>"; };
+		70FAB6852064EB93000DD595 /* YKLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKLine.m; sourceTree = "<group>"; };
+		70FAB6872064EFC1000DD595 /* YKVerticalAxis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKVerticalAxis.h; sourceTree = "<group>"; };
+		70FAB6882064EFC1000DD595 /* YKVerticalAxis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKVerticalAxis.m; sourceTree = "<group>"; };
+		70FAB68A2064EFFD000DD595 /* YKHorizontalAxis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKHorizontalAxis.h; sourceTree = "<group>"; };
+		70FAB68B2064EFFD000DD595 /* YKHorizontalAxis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKHorizontalAxis.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +100,7 @@
 		70FAB6472063F1E2000DD595 /* YKChart */ = {
 			isa = PBXGroup;
 			children = (
+				70FAB6802064E9B4000DD595 /* LineChart */,
 				70FAB67320649644000DD595 /* PieChart */,
 				70FAB6602063F2A1000DD595 /* CircleChart */,
 				70FAB65E2063F23D000DD595 /* Chart */,
@@ -108,6 +124,8 @@
 				70FAB6712063F2BE000DD595 /* CircleChartController.m */,
 				70FAB67A2064AC3D000DD595 /* PieChartController.h */,
 				70FAB67B2064AC3D000DD595 /* PieChartController.m */,
+				70FAB67D2064E0F9000DD595 /* LineChartController.h */,
+				70FAB67E2064E0F9000DD595 /* LineChartController.m */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -138,6 +156,21 @@
 				70FAB6782064A81E000DD595 /* YKPieChart.m */,
 			);
 			path = PieChart;
+			sourceTree = "<group>";
+		};
+		70FAB6802064E9B4000DD595 /* LineChart */ = {
+			isa = PBXGroup;
+			children = (
+				70FAB6812064EAC1000DD595 /* YKLineChart.h */,
+				70FAB6822064EAC1000DD595 /* YKLineChart.m */,
+				70FAB6842064EB93000DD595 /* YKLine.h */,
+				70FAB6852064EB93000DD595 /* YKLine.m */,
+				70FAB6872064EFC1000DD595 /* YKVerticalAxis.h */,
+				70FAB6882064EFC1000DD595 /* YKVerticalAxis.m */,
+				70FAB68A2064EFFD000DD595 /* YKHorizontalAxis.h */,
+				70FAB68B2064EFFD000DD595 /* YKHorizontalAxis.m */,
+			);
+			path = LineChart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,7 +246,11 @@
 			files = (
 				70FAB64D2063F1E3000DD595 /* ViewController.m in Sources */,
 				70FAB66C2063F2A1000DD595 /* YKCircleView.m in Sources */,
+				70FAB6832064EAC1000DD595 /* YKLineChart.m in Sources */,
 				70FAB6582063F1E3000DD595 /* main.m in Sources */,
+				70FAB67F2064E0F9000DD595 /* LineChartController.m in Sources */,
+				70FAB68C2064EFFD000DD595 /* YKHorizontalAxis.m in Sources */,
+				70FAB6862064EB93000DD595 /* YKLine.m in Sources */,
 				70FAB67C2064AC3D000DD595 /* PieChartController.m in Sources */,
 				70FAB64A2063F1E3000DD595 /* AppDelegate.m in Sources */,
 				70FAB6792064A81E000DD595 /* YKPieChart.m in Sources */,
@@ -222,6 +259,7 @@
 				70FAB6722063F2BE000DD595 /* CircleChartController.m in Sources */,
 				70FAB66F2063F2A1000DD595 /* YKPieView.m in Sources */,
 				70FAB66D2063F2A1000DD595 /* YKDataModel.m in Sources */,
+				70FAB6892064EFC1000DD595 /* YKVerticalAxis.m in Sources */,
 				70FAB66E2063F2A1000DD595 /* YKLoopView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
