@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7045FF3E20666BE400E559DD /* BarChartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7045FF3D20666BE400E559DD /* BarChartController.m */; };
 		70FAB64A2063F1E3000DD595 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB6492063F1E3000DD595 /* AppDelegate.m */; };
 		70FAB64D2063F1E3000DD595 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB64C2063F1E3000DD595 /* ViewController.m */; };
 		70FAB6502063F1E3000DD595 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70FAB64E2063F1E3000DD595 /* Main.storyboard */; };
@@ -30,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7045FF3C20666BE400E559DD /* BarChartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarChartController.h; sourceTree = "<group>"; };
+		7045FF3D20666BE400E559DD /* BarChartController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarChartController.m; sourceTree = "<group>"; };
 		70FAB6452063F1E2000DD595 /* YKChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YKChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70FAB6482063F1E3000DD595 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		70FAB6492063F1E3000DD595 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 				70FAB67B2064AC3D000DD595 /* PieChartController.m */,
 				70FAB67D2064E0F9000DD595 /* LineChartController.h */,
 				70FAB67E2064E0F9000DD595 /* LineChartController.m */,
+				7045FF3C20666BE400E559DD /* BarChartController.h */,
+				7045FF3D20666BE400E559DD /* BarChartController.m */,
 			);
 			path = Chart;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 				70FAB66B2063F2A1000DD595 /* YKAngleTool.m in Sources */,
 				70FAB6722063F2BE000DD595 /* CircleChartController.m in Sources */,
 				70FAB66F2063F2A1000DD595 /* YKPieView.m in Sources */,
+				7045FF3E20666BE400E559DD /* BarChartController.m in Sources */,
 				70FAB66D2063F2A1000DD595 /* YKDataModel.m in Sources */,
 				70FAB6892064EFC1000DD595 /* YKVerticalAxis.m in Sources */,
 				70FAB66E2063F2A1000DD595 /* YKLoopView.m in Sources */,

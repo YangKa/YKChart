@@ -1,32 +1,32 @@
-
 //
-//  LineChartController.m
+//  BarChartController.m
 //  YKChart
 //
-//  Created by qiager on 2018/3/23.
+//  Created by qiager on 2018/3/24.
 //  Copyright © 2018年 yangka. All rights reserved.
 //
 
-#import "LineChartController.h"
+#import "BarChartController.h"
 #import "YKLineChart.h"
 
-@interface LineChartController (){
-    YKLineChart *lineChart;
+@interface BarChartController (){
+    YKLineChart *barChart;
 }
 
 @end
 
+
 #define RandomColor [UIColor colorWithRed:(arc4random_uniform(255)/255.0) green:(arc4random_uniform(255)/255.0) blue:(arc4random_uniform(255)/255.0) alpha:1]
 
-@implementation LineChartController
+@implementation BarChartController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightGrayColor];
-   
+    
     //
     
-    [self addLineChart];
+    [self addBarChart];
     //
     UIButton *button1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
     button1.backgroundColor = [UIColor blueColor];
@@ -46,7 +46,7 @@
 }
 
 
-- (void)addLineChart{
+- (void)addBarChart{
     
     NSArray *list = @[@"一月", @"二月", @"三月", @"四月", @"五月", @"六月"];
     YKHorizontalAxis *HAxis = [[YKHorizontalAxis alloc] initWithAxisType:YKHorizontalAxisType_String
@@ -71,13 +71,13 @@
         [lines addObject:line];
     }
     
-    lineChart = [[YKLineChart alloc] initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, 300)
+    barChart = [[YKLineChart alloc] initWithFrame:CGRectMake(0, 50, self.view.frame.size.width, 300)
                                     horizontalAxis:HAxis
                                       verticalAxis:VAxis
                                              lines:lines
-                                              type:YKLineChartType_Line];
-    lineChart.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:lineChart];
+                                              type:YKLineChartType_Bar];
+    barChart.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:barChart];
 }
 
 - (void)refresh{
@@ -104,8 +104,7 @@
         [lines addObject:line];
     }
     
-    
-    [lineChart resetWithHorizontalAxis:HAxis verticalAxis:VAxis lines:lines];
+    [barChart resetWithHorizontalAxis:HAxis verticalAxis:VAxis lines:lines];
 }
 
 

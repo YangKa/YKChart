@@ -21,6 +21,8 @@
     
     UIView *_infoView;
     
+    YKLineChartType _chartType;
+    
 }
 
 @property (nonatomic, strong) YKHorizontalAxis* horizontalAxis;
@@ -36,12 +38,14 @@
 - (instancetype)initWithFrame:(CGRect)frame
                horizontalAxis:(YKHorizontalAxis*)horizontalAxis
                  verticalAxis:(YKVerticalAxis*)verticalAxis
-                        lines:(NSArray*)lines{
+                        lines:(NSArray*)lines
+                         type:(YKLineChartType)type{
     self = [super initWithFrame:frame];
     if (self) {
         _topMargin = 30;
         _VerticalAxisWidth = 45;
         _HorizontalAxisHeight = 20;
+        _chartType = type;
         
         [self resetWithHorizontalAxis:horizontalAxis verticalAxis:verticalAxis lines:lines];
     }
@@ -75,7 +79,13 @@
     }
     [self drawVerticalAxis];
     [self drawHorizontalAxis];
-    [self drawLines];
+    
+    if (_chartType == YKLineChartType_Line) {
+        [self drawLines];
+    }else if (_chartType == YKLineChartType_Bar){
+        [self drawBar];
+    }
+    
     [self drawInfo];
 }
 
@@ -86,7 +96,7 @@
     [_drawView.layer addSublayer:shapeLayer];
     
     NSArray *values = _horizontalAxis.values;
-    _intervalWidth_X = (_drawRect.size.width - _VerticalAxisWidth - 20)/(values.count);
+    _intervalWidth_X = (_drawRect.size.width - _VerticalAxisWidth)/(values.count + 0.8);
     
     for (int i = 0; i < values.count; i++) {
     
@@ -141,7 +151,7 @@
 
 - (void)drawLines{
     
-    CGFloat verticalAxisHeight = _drawRect.size.height - _HorizontalAxisHeight - 30;
+    CGFloat verticalAxisHeight = _drawRect.size.height - _HorizontalAxisHeight - _topMargin;
     CGFloat verticalInterval = _verticalAxis.maxValue - _verticalAxis.minValue;
     
     for (int  i =0 ; i < _lines.count; i++) {
@@ -180,6 +190,33 @@
     
         }
         shapeLayer.path = path.CGPath;
+    }
+}
+
+- (void)drawBar{
+    
+    CGFloat barWidth = (_intervalWidth_X - 10)/_lines.count;
+    barWidth = (barWidth > 30) ? 30:barWidth;
+    CGFloat originX = _intervalWidth_X - barWidth*_lines.count;
+    CGFloat verticalAxisHeight = _drawRect.size.height - _HorizontalAxisHeight - _topMargin;
+    CGFloat verticalInterval = _verticalAxis.maxValue - _verticalAxis.minValue;
+    
+    for (int  index =0 ; index < _horizontalAxis.values.count; index++) {
+       
+        for (int i = 0; i < _lines.count; i++) {
+            YKLine *line = _lines[i];
+            YKPoint *point  = line.pointList[index];
+            
+            CGFloat barHeight = ((point.YAxisValue - _verticalAxis.minValue)/verticalInterval)*verticalAxisHeight;
+            CGFloat  Y = _drawRect.size.height - barHeight - _HorizontalAxisHeight;
+            CGFloat  X  = _intervalWidth_X/2 + _intervalWidth_X*index + originX + barWidth*i;
+            
+            CALayer *layer = [CALayer layer];
+            layer.frame = CGRectMake(_VerticalAxisWidth + X, Y, barWidth, barHeight);
+            layer.backgroundColor = line.color.CGColor;
+            [_drawView.layer addSublayer:layer];
+            
+        }
     }
 }
 

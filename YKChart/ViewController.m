@@ -7,11 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "CircleChartController.h"
-#import "PieChartController.h"
-#import "LineChartController.h"
 
-@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>{
+    NSArray *_chartClassList;
+}
 
 @end
 
@@ -20,12 +19,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
    
+    _chartClassList = @[@{@"name":@"图表一",
+                          @"class":@"CircleChartController"
+                          },
+                        @{@"name":@"图表二",
+                          @"class":@"PieChartController"
+                          },
+                        @{@"name":@"图表三",
+                          @"class":@"LineChartController"
+                          },
+                        @{@"name":@"图表四",
+                          @"class":@"BarChartController"
+                          }];
     [self addTableView];
 }
 
 - (void)addTableView
 {
-    UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 200) style:UITableViewStylePlain];
+    UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     tableView.delegate = self;
     tableView.dataSource = self;
     [self.view addSubview:tableView];
@@ -35,7 +46,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return _chartClassList.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -47,30 +58,21 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     
-    if (indexPath.row == 0) {
-        cell.textLabel.text = @"图表一";
-    }else if (indexPath.row == 1){
-        cell.textLabel.text = @"图表二";
-    }else if (indexPath.row == 2){
-        cell.textLabel.text = @"图表三";
-    }
+    cell.textLabel.text  = [_chartClassList[indexPath.row] objectForKey:@"name"];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     //[tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    if (indexPath.row == 0) {
-        CircleChartController *chartVC1 = [[CircleChartController alloc] init];
-        [self presentViewController:chartVC1 animated:YES completion:nil];
-    }else if (indexPath.row == 1){
-        PieChartController *chartVC2 = [[PieChartController alloc] init];
-        [self presentViewController:chartVC2 animated:YES completion:nil];
-    }else if (indexPath.row == 2){
-        LineChartController *chartVC3 = [[LineChartController alloc] init];
-        [self presentViewController:chartVC3 animated:YES completion:nil];
-    }
+    NSString *className =  [_chartClassList[indexPath.row] objectForKey:@"class"];
+    [self presentClass:NSClassFromString(className)];
    
+}
+
+- (void)presentClass:(Class)class{
+    UIViewController *VC = [[class alloc] init];
+    [self presentViewController:VC animated:YES completion:nil];
 }
 
 

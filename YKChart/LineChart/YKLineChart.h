@@ -11,6 +11,12 @@
 #import "YKVerticalAxis.h"
 #import "YKHorizontalAxis.h"
 
+
+typedef NS_ENUM(NSUInteger, YKLineChartType){
+    YKLineChartType_Line,
+    YKLineChartType_Bar
+};
+
 @interface YKLineChart : UIView
 
 //the point is hollow
@@ -20,7 +26,8 @@
 - (instancetype)initWithFrame:(CGRect)frame
                horizontalAxis:(YKHorizontalAxis*)horizontalAxis
                  verticalAxis:(YKVerticalAxis*)verticalAxis
-                        lines:(NSArray*)lines;
+                        lines:(NSArray*)lines
+                         type:(YKLineChartType)type;
 
 
 - (void)resetWithHorizontalAxis:(YKHorizontalAxis*)horizontalAxis
