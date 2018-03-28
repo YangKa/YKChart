@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7000E9D0206BED0F0032D93F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7000E9CF206BED0F0032D93F /* AppDelegate.m */; };
+		7000E9D3206BED0F0032D93F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7000E9D2206BED0F0032D93F /* ViewController.m */; };
+		7000E9D6206BED0F0032D93F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7000E9D4206BED0F0032D93F /* Main.storyboard */; };
+		7000E9D8206BED0F0032D93F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7000E9D7206BED0F0032D93F /* Assets.xcassets */; };
+		7000E9DB206BED0F0032D93F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7000E9D9206BED0F0032D93F /* LaunchScreen.storyboard */; };
+		7000E9DE206BED0F0032D93F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7000E9DD206BED0F0032D93F /* main.m */; };
+		7000E9FC206BEDA10032D93F /* YKChartOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7000E9F6206BEDA10032D93F /* YKChartOptions.m */; };
+		7000E9FD206BEDA10032D93F /* YKCharts.html in Resources */ = {isa = PBXBuildFile; fileRef = 7000E9F8206BEDA10032D93F /* YKCharts.html */; };
+		7000E9FE206BEDA10032D93F /* YKECharts.m in Sources */ = {isa = PBXBuildFile; fileRef = 7000E9F9206BEDA10032D93F /* YKECharts.m */; };
+		7000E9FF206BEDA10032D93F /* echarts.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 7000E9FB206BEDA10032D93F /* echarts.min.js */; };
 		7045FF3E20666BE400E559DD /* BarChartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7045FF3D20666BE400E559DD /* BarChartController.m */; };
 		70FAB64A2063F1E3000DD595 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB6492063F1E3000DD595 /* AppDelegate.m */; };
 		70FAB64D2063F1E3000DD595 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB64C2063F1E3000DD595 /* ViewController.m */; };
@@ -31,6 +41,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7000E9CC206BED0F0032D93F /* YKECharts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YKECharts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7000E9CE206BED0F0032D93F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7000E9CF206BED0F0032D93F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7000E9D1206BED0F0032D93F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7000E9D2206BED0F0032D93F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7000E9D5206BED0F0032D93F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7000E9D7206BED0F0032D93F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7000E9DA206BED0F0032D93F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7000E9DC206BED0F0032D93F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7000E9DD206BED0F0032D93F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7000E9F6206BEDA10032D93F /* YKChartOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKChartOptions.m; sourceTree = "<group>"; };
+		7000E9F7206BEDA10032D93F /* YKECharts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKECharts.h; sourceTree = "<group>"; };
+		7000E9F8206BEDA10032D93F /* YKCharts.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = YKCharts.html; sourceTree = "<group>"; };
+		7000E9F9206BEDA10032D93F /* YKECharts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKECharts.m; sourceTree = "<group>"; };
+		7000E9FA206BEDA10032D93F /* YKChartOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKChartOptions.h; sourceTree = "<group>"; };
+		7000E9FB206BEDA10032D93F /* echarts.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = echarts.min.js; sourceTree = "<group>"; };
 		7045FF3C20666BE400E559DD /* BarChartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarChartController.h; sourceTree = "<group>"; };
 		7045FF3D20666BE400E559DD /* BarChartController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BarChartController.m; sourceTree = "<group>"; };
 		70FAB6452063F1E2000DD595 /* YKChart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YKChart.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +100,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7000E9C9206BED0F0032D93F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		70FAB6422063F1E2000DD595 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -84,10 +117,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7000E9CD206BED0F0032D93F /* YKECharts */ = {
+			isa = PBXGroup;
+			children = (
+				7000E9F5206BEDA10032D93F /* YKECharts */,
+				7000E9CE206BED0F0032D93F /* AppDelegate.h */,
+				7000E9CF206BED0F0032D93F /* AppDelegate.m */,
+				7000E9D1206BED0F0032D93F /* ViewController.h */,
+				7000E9D2206BED0F0032D93F /* ViewController.m */,
+				7000E9D4206BED0F0032D93F /* Main.storyboard */,
+				7000E9D7206BED0F0032D93F /* Assets.xcassets */,
+				7000E9D9206BED0F0032D93F /* LaunchScreen.storyboard */,
+				7000E9DC206BED0F0032D93F /* Info.plist */,
+				7000E9DD206BED0F0032D93F /* main.m */,
+			);
+			path = YKECharts;
+			sourceTree = "<group>";
+		};
+		7000E9F5206BEDA10032D93F /* YKECharts */ = {
+			isa = PBXGroup;
+			children = (
+				7000E9F6206BEDA10032D93F /* YKChartOptions.m */,
+				7000E9F7206BEDA10032D93F /* YKECharts.h */,
+				7000E9F8206BEDA10032D93F /* YKCharts.html */,
+				7000E9F9206BEDA10032D93F /* YKECharts.m */,
+				7000E9FA206BEDA10032D93F /* YKChartOptions.h */,
+				7000E9FB206BEDA10032D93F /* echarts.min.js */,
+			);
+			path = YKECharts;
+			sourceTree = "<group>";
+		};
 		70FAB63C2063F1E2000DD595 = {
 			isa = PBXGroup;
 			children = (
 				70FAB6472063F1E2000DD595 /* YKChart */,
+				7000E9CD206BED0F0032D93F /* YKECharts */,
 				70FAB6462063F1E2000DD595 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				70FAB6452063F1E2000DD595 /* YKChart.app */,
+				7000E9CC206BED0F0032D93F /* YKECharts.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,6 +246,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7000E9CB206BED0F0032D93F /* YKECharts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7000E9E1206BED0F0032D93F /* Build configuration list for PBXNativeTarget "YKECharts" */;
+			buildPhases = (
+				7000E9C8206BED0F0032D93F /* Sources */,
+				7000E9C9206BED0F0032D93F /* Frameworks */,
+				7000E9CA206BED0F0032D93F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YKECharts;
+			productName = YKECharts;
+			productReference = 7000E9CC206BED0F0032D93F /* YKECharts.app */;
+			productType = "com.apple.product-type.application";
+		};
 		70FAB6442063F1E2000DD595 /* YKChart */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 70FAB65B2063F1E3000DD595 /* Build configuration list for PBXNativeTarget "YKChart" */;
@@ -207,6 +289,10 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = yangka;
 				TargetAttributes = {
+					7000E9CB206BED0F0032D93F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					70FAB6442063F1E2000DD595 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -227,11 +313,24 @@
 			projectRoot = "";
 			targets = (
 				70FAB6442063F1E2000DD595 /* YKChart */,
+				7000E9CB206BED0F0032D93F /* YKECharts */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7000E9CA206BED0F0032D93F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7000E9DB206BED0F0032D93F /* LaunchScreen.storyboard in Resources */,
+				7000E9FF206BEDA10032D93F /* echarts.min.js in Resources */,
+				7000E9FD206BEDA10032D93F /* YKCharts.html in Resources */,
+				7000E9D8206BED0F0032D93F /* Assets.xcassets in Resources */,
+				7000E9D6206BED0F0032D93F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		70FAB6432063F1E2000DD595 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,6 +344,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7000E9C8206BED0F0032D93F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7000E9D3206BED0F0032D93F /* ViewController.m in Sources */,
+				7000E9FC206BEDA10032D93F /* YKChartOptions.m in Sources */,
+				7000E9DE206BED0F0032D93F /* main.m in Sources */,
+				7000E9FE206BEDA10032D93F /* YKECharts.m in Sources */,
+				7000E9D0206BED0F0032D93F /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		70FAB6412063F1E2000DD595 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -273,6 +384,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		7000E9D4206BED0F0032D93F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7000E9D5206BED0F0032D93F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7000E9D9206BED0F0032D93F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7000E9DA206BED0F0032D93F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		70FAB64E2063F1E3000DD595 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,6 +419,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7000E9DF206BED0F0032D93F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4QVJTFD4ZG;
+				INFOPLIST_FILE = YKECharts/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yangka.YKECharts;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7000E9E0206BED0F0032D93F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4QVJTFD4ZG;
+				INFOPLIST_FILE = YKECharts/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = yangka.YKECharts;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		70FAB6592063F1E3000DD595 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -427,6 +582,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7000E9E1206BED0F0032D93F /* Build configuration list for PBXNativeTarget "YKECharts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7000E9DF206BED0F0032D93F /* Debug */,
+				7000E9E0206BED0F0032D93F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		70FAB6402063F1E2000DD595 /* Build configuration list for PBXProject "YKChart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

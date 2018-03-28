@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+<head>
+    <meta charset="utf-8">
+    <!-- 引入 ECharts 文件 -->
+    <script src="echarts.min.js"></script>
+</head>
+
+<body style="height: 100%; margin: 0">
+    <div id="main" style="height: 100%"></div>
+
+     <script type="text/javascript">
+        
+         function drawChart(optionJsonStr) {
+             var myChart = echarts.init(document.getElementById('main'));
+             var app = {};
+             var optionsObject = JSON.parse(optionJsonStr);
+             myChart.setOption(optionsObject);
+         }
+    </script>
+</body>
+
+</html>
