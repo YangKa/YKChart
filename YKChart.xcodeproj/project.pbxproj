@@ -15,7 +15,7 @@
 		7000E9DE206BED0F0032D93F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7000E9DD206BED0F0032D93F /* main.m */; };
 		7000E9FC206BEDA10032D93F /* YKChartOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7000E9F6206BEDA10032D93F /* YKChartOptions.m */; };
 		7000E9FD206BEDA10032D93F /* YKCharts.html in Resources */ = {isa = PBXBuildFile; fileRef = 7000E9F8206BEDA10032D93F /* YKCharts.html */; };
-		7000E9FE206BEDA10032D93F /* YKECharts.m in Sources */ = {isa = PBXBuildFile; fileRef = 7000E9F9206BEDA10032D93F /* YKECharts.m */; };
+		7000E9FE206BEDA10032D93F /* YKEChartsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7000E9F9206BEDA10032D93F /* YKEChartsView.m */; };
 		7000E9FF206BEDA10032D93F /* echarts.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 7000E9FB206BEDA10032D93F /* echarts.min.js */; };
 		7045FF3E20666BE400E559DD /* BarChartController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7045FF3D20666BE400E559DD /* BarChartController.m */; };
 		70FAB64A2063F1E3000DD595 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 70FAB6492063F1E3000DD595 /* AppDelegate.m */; };
@@ -52,9 +52,9 @@
 		7000E9DC206BED0F0032D93F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7000E9DD206BED0F0032D93F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7000E9F6206BEDA10032D93F /* YKChartOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKChartOptions.m; sourceTree = "<group>"; };
-		7000E9F7206BEDA10032D93F /* YKECharts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKECharts.h; sourceTree = "<group>"; };
+		7000E9F7206BEDA10032D93F /* YKEChartsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKEChartsView.h; sourceTree = "<group>"; };
 		7000E9F8206BEDA10032D93F /* YKCharts.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = YKCharts.html; sourceTree = "<group>"; };
-		7000E9F9206BEDA10032D93F /* YKECharts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKECharts.m; sourceTree = "<group>"; };
+		7000E9F9206BEDA10032D93F /* YKEChartsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YKEChartsView.m; sourceTree = "<group>"; };
 		7000E9FA206BEDA10032D93F /* YKChartOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YKChartOptions.h; sourceTree = "<group>"; };
 		7000E9FB206BEDA10032D93F /* echarts.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = echarts.min.js; sourceTree = "<group>"; };
 		7045FF3C20666BE400E559DD /* BarChartController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BarChartController.h; sourceTree = "<group>"; };
@@ -137,14 +137,24 @@
 		7000E9F5206BEDA10032D93F /* YKECharts */ = {
 			isa = PBXGroup;
 			children = (
-				7000E9F6206BEDA10032D93F /* YKChartOptions.m */,
-				7000E9F7206BEDA10032D93F /* YKECharts.h */,
-				7000E9F8206BEDA10032D93F /* YKCharts.html */,
-				7000E9F9206BEDA10032D93F /* YKECharts.m */,
+				7000E9F7206BEDA10032D93F /* YKEChartsView.h */,
+				7000E9F9206BEDA10032D93F /* YKEChartsView.m */,
 				7000E9FA206BEDA10032D93F /* YKChartOptions.h */,
+				7000E9F6206BEDA10032D93F /* YKChartOptions.m */,
+				7000E9F8206BEDA10032D93F /* YKCharts.html */,
 				7000E9FB206BEDA10032D93F /* echarts.min.js */,
 			);
 			path = YKECharts;
+			sourceTree = "<group>";
+		};
+		7000EA04206C86130032D93F /* YKChartLib */ = {
+			isa = PBXGroup;
+			children = (
+				70FAB6802064E9B4000DD595 /* LineChart */,
+				70FAB67320649644000DD595 /* PieChart */,
+				70FAB6602063F2A1000DD595 /* CircleChart */,
+			);
+			path = YKChartLib;
 			sourceTree = "<group>";
 		};
 		70FAB63C2063F1E2000DD595 = {
@@ -168,9 +178,7 @@
 		70FAB6472063F1E2000DD595 /* YKChart */ = {
 			isa = PBXGroup;
 			children = (
-				70FAB6802064E9B4000DD595 /* LineChart */,
-				70FAB67320649644000DD595 /* PieChart */,
-				70FAB6602063F2A1000DD595 /* CircleChart */,
+				7000EA04206C86130032D93F /* YKChartLib */,
 				70FAB65E2063F23D000DD595 /* Chart */,
 				70FAB6482063F1E3000DD595 /* AppDelegate.h */,
 				70FAB6492063F1E3000DD595 /* AppDelegate.m */,
@@ -351,7 +359,7 @@
 				7000E9D3206BED0F0032D93F /* ViewController.m in Sources */,
 				7000E9FC206BEDA10032D93F /* YKChartOptions.m in Sources */,
 				7000E9DE206BED0F0032D93F /* main.m in Sources */,
-				7000E9FE206BEDA10032D93F /* YKECharts.m in Sources */,
+				7000E9FE206BEDA10032D93F /* YKEChartsView.m in Sources */,
 				7000E9D0206BED0F0032D93F /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

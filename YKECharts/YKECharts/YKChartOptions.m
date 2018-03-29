@@ -11,6 +11,16 @@
 
 @implementation YKChartOptions
 
+YKPropSetFuncImplementation(YKChartOptions, NSDictionary*, title);
+YKPropSetFuncImplementation(YKChartOptions, NSDictionary*, tooltip);
+YKPropSetFuncImplementation(YKChartOptions, NSDictionary*, legend);
+YKPropSetFuncImplementation(YKChartOptions, NSDictionary*, grid);
+YKPropSetFuncImplementation(YKChartOptions, NSDictionary*, toolbox);
+YKPropSetFuncImplementation(YKChartOptions, NSDictionary*, xAxis);
+YKPropSetFuncImplementation(YKChartOptions, NSDictionary*, yAxis);
+YKPropSetFuncImplementation(YKChartOptions, NSArray*, series);
+
+
 - (NSDictionary*)convertToDic{
     return [self getObjectData:self];
 }

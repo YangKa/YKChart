@@ -11,8 +11,11 @@
 
      <script type="text/javascript">
         
+        var myChart;
          function drawChart(optionJsonStr) {
-             var myChart = echarts.init(document.getElementById('main'));
+             if(!myChart){
+                 myChart = echarts.init(document.getElementById('main'));
+             }
              var app = {};
              var optionsObject = JSON.parse(optionJsonStr);
              myChart.setOption(optionsObject);

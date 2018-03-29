@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "YKChartOptions.h"
 
-@class YKECharts;
+@class YKEChartsView;
 @protocol YKEChartsDelegate <NSObject>
-- (void)didDrawFinishedForChartView:(YKECharts*)chartView;
+- (void)didDrawFinishedForChartView:(YKEChartsView*)chartView;
 @end
 
-@interface YKECharts : UIView
+@interface YKEChartsView : UIView
 
 - (instancetype)initWithFrame:(CGRect)frame delegate:(id<YKEChartsDelegate>)delegate;
 

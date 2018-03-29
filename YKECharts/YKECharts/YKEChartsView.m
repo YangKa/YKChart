@@ -6,10 +6,10 @@
 //  Copyright © 2018年 yangka. All rights reserved.
 //
 
-#import "YKECharts.h"
+#import "YKEChartsView.h"
 #import <WebKit/WebKit.h>
 
-@interface YKECharts ()<WKNavigationDelegate>
+@interface YKEChartsView ()<WKNavigationDelegate>
 
 @property (nonatomic, copy) NSString *optionJson;
 
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation YKECharts
+@implementation YKEChartsView
 
 
 - (instancetype)initWithFrame:(CGRect)frame delegate:(id<YKEChartsDelegate>)delegate{
@@ -49,14 +49,15 @@
 }
 
 - (void)drawChartWithOptions:(NSDictionary*)optionDic{
-    NSLog(@"optionDic=%@", optionDic);
     NSString *options = [self convertDictionaryIntoJson:optionDic];
     _optionJson = options;
     [_webView loadRequest:[self getJavaScriptFileURLRequest]];
 }
 
 - (void)refreshChartWithOptions:(NSDictionary *)optionDic{
-   
+    NSString *options = [self convertDictionaryIntoJson:optionDic];
+    _optionJson = options;
+    [self draw];
 }
 
 #pragma  mark - draw

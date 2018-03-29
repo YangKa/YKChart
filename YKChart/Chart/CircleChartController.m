@@ -45,7 +45,7 @@
     UIButton *button1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
     button1.backgroundColor = [UIColor blueColor];
     button1.center = CGPointMake(100, self.view.frame.size.height - 60);
-    [button1 setTitle:@"Dismiss" forState:UIControlStateNormal];
+    [button1 setTitle:@"refresh" forState:UIControlStateNormal];
     [button1 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button1 addTarget:self action:@selector(refresh) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button1];

@@ -8,23 +8,35 @@
 
 #import <Foundation/Foundation.h>
 
+
+#define YKObject(objectName) [[objectName alloc]init]
+
+
+#define YKPropStatementAndFuncStatement(propertyModifier,className, propertyPointerType, propertyName)                  \
+@property(nonatomic,propertyModifier)propertyPointerType  propertyName;                                                 \
+- (className * (^) (propertyPointerType propertyName)) propertyName##Set;
+
+
+
+#define YKPropSetFuncImplementation(className, propertyPointerType, propertyName)                                       \
+- (className * (^) (propertyPointerType propertyName))propertyName##Set{                                                \
+return ^(propertyPointerType propertyName) {                                                                            \
+_##propertyName = propertyName;                                                                                         \
+return self;                                                                                                            \
+};                                                                                                                      \
+}
+
 @interface YKChartOptions : NSObject
 
-@property (nonatomic, copy) NSDictionary *title;
+YKPropStatementAndFuncStatement(copy, YKChartOptions, NSDictionary*, title);
+YKPropStatementAndFuncStatement(copy, YKChartOptions, NSDictionary*, tooltip);
+YKPropStatementAndFuncStatement(copy, YKChartOptions, NSDictionary*, legend);
+YKPropStatementAndFuncStatement(copy, YKChartOptions, NSDictionary*, grid);
 
-@property (nonatomic, copy) NSDictionary* tooltip;
-
-@property (nonatomic, copy) NSDictionary* legend;
-
-@property (nonatomic, copy) NSDictionary* grid;
-
-@property (nonatomic, copy) NSDictionary* toolbox;
-
-@property (nonatomic, copy) NSDictionary* xAxis;
-
-@property (nonatomic, copy) NSDictionary* yAxis;
-
-@property (nonatomic, copy) NSArray* series;
+YKPropStatementAndFuncStatement(copy, YKChartOptions, NSDictionary*, toolbox);
+YKPropStatementAndFuncStatement(copy, YKChartOptions, NSDictionary*, xAxis);
+YKPropStatementAndFuncStatement(copy, YKChartOptions, NSDictionary*, yAxis);
+YKPropStatementAndFuncStatement(copy, YKChartOptions, NSArray*, series);
 
 - (NSDictionary*)convertToDic;
 

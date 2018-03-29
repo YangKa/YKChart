@@ -8,9 +8,12 @@
 
 #import "ViewController.h"
 
-#import "YKECharts.h"
+#import "YKEChartsView.h"
 
-@interface ViewController ()<YKEChartsDelegate>
+@interface ViewController ()<YKEChartsDelegate>{
+    YKEChartsView *lineChartView;
+    YKEChartsView *pieNestChartView;
+}
 
 @end
 
@@ -21,40 +24,32 @@
     self.view.backgroundColor = [UIColor lightGrayColor];
     
     
-    YKECharts *chartView = [[YKECharts alloc] initWithFrame:CGRectMake(0, 30, self.view.frame.size.width, 300) delegate:self];
-    [chartView drawChartWithOptions:[self options]];
-    [self.view addSubview:chartView];
+    lineChartView = [[YKEChartsView alloc] initWithFrame:CGRectMake(0, 30, self.view.frame.size.width, 300) delegate:self];
+    [lineChartView drawChartWithOptions:[self options]];
+    [self.view addSubview:lineChartView];
     
     
-    YKECharts *chartView1 = [[YKECharts alloc] initWithFrame:CGRectMake(0, 350, self.view.frame.size.width, 250) delegate:self];
-    [chartView1 drawChartWithOptions:[self option1]];
-    [self.view addSubview:chartView1];
+    pieNestChartView = [[YKEChartsView alloc] initWithFrame:CGRectMake(0, 350, self.view.frame.size.width, 250) delegate:self];
+    [pieNestChartView drawChartWithOptions:[self option1]];
+    [self.view addSubview:pieNestChartView];
+    
+    UIButton *button1 = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+    button1.backgroundColor = [UIColor blueColor];
+    button1.center = CGPointMake(100, self.view.frame.size.height - 60);
+    [button1 setTitle:@"refresh" forState:UIControlStateNormal];
+    [button1 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [button1 addTarget:self action:@selector(refresh) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button1];
     
 }
 
-- (void)didDrawFinishedForChartView:(YKECharts *)chartView{
-    NSLog(@"绘制完成");
+- (void)refresh{
+     [lineChartView drawChartWithOptions:[self option1]];
+     [pieNestChartView drawChartWithOptions:[self options]];
 }
 
-
+//line
 - (NSDictionary*)options{
-    
-    YKChartOptions *options = [[YKChartOptions alloc] init];
-    
-    options.title = @{@"text": @"折线图堆叠"};
-    options.tooltip = @{@"trigger":@"axis"};
-    options.legend = @{@"orient": @"horizontal",
-                       @"y": @"bottom",
-                       @"data":@[@"邮件营销",@"联盟广告",@"视频广告",@"直接访问",@"搜索引擎"]};
-    options.grid = @{@"left": @"3%",
-                     @"right": @"4%",
-                     @"bottom": @"8%",
-                     @"containLabel": @true};
-    options.toolbox = @{@"feature":@{@"saveImage":@{}}};
-    options.xAxis = @{@"type": @"category",
-                      @"boundaryGap": @false,
-                      @"data": @[@"周一",@"周二",@"周三",@"周四",@"周五",@"周六",@"周日"]};
-    options.yAxis = @{@"type":@"value"};
     
     YKSeriseItem *item = [[YKSeriseItem alloc] init];
     item.name = @"邮件营销";
@@ -86,24 +81,31 @@
     item4.stack = @"总量";
     item4.data  = @[@820, @932, @901, @934, @1290, @1330, @1320];
     
-    options.series = @[item, item1, item2, item3, item4];
+    //--------------------
+    
+    YKChartOptions *options = YKObject(YKChartOptions)
+    .titleSet(@{@"text": @"折线图堆叠"})
+    .tooltipSet(@{@"trigger":@"axis"})
+    .legendSet(@{@"orient": @"horizontal",
+                 @"y": @"bottom",
+                 @"data":@[@"邮件营销",@"联盟广告",@"视频广告",@"直接访问",@"搜索引擎"]})
+    .gridSet(@{@"left": @"3%",
+               @"right": @"4%",
+               @"bottom": @"8%",
+               @"containLabel": @true})
+    .toolboxSet(@{@"feature":@{@"saveImage":@{}}})
+    .xAxisSet(@{@"type": @"category",
+                @"boundaryGap": @false,
+                @"data": @[@"周一",@"周二",@"周三",@"周四",@"周五",@"周六",@"周日"]})
+    .yAxisSet(@{@"type":@"value"})
+    .seriesSet(@[item, item1, item2, item3, item4]);
     
     return [options convertToDic];
 }
 
 
-
+//pie-nest
 - (NSDictionary*)option1{
-    
-    
-    YKChartOptions *options = [[YKChartOptions alloc] init];
-    
-    options.title = @{@"text": @"嵌套环形图"};
-    options.tooltip = @{@"trigger":@"item",
-                        @"formatter":@"{a} <br/>{b}: {c} ({d}%)"};
-    options.legend = @{@"orient": @"horizontal",
-                       @"y": @"bottom",
-                       @"data":@[@"直达",@"营销广告",@"搜索引擎",@"邮件营销",@"联盟广告",@"视频广告",@"百度",@"谷歌",@"必应",@"其他"]};
     
     YKSeriseItem *item = [[YKSeriseItem alloc] init];
     item.name = @"访问来源";
@@ -159,13 +161,22 @@
                     @{@"value":@147, @"name":@"必应"},
                     @{@"value":@102, @"name":@"其他"}];
     
-    
-    options.series = @[item, item1];
+    YKChartOptions *options = YKObject(YKChartOptions)
+    .titleSet(@{@"text": @"嵌套环形图"})
+    .tooltipSet( @{@"trigger":@"item",
+                   @"formatter":@"{a} <br/>{b}: {c} ({d}%)"})
+    .legendSet(@{@"orient": @"horizontal",
+                 @"y": @"bottom",
+                 @"data":@[@"直达",@"营销广告",@"搜索引擎",@"邮件营销",@"联盟广告",@"视频广告",@"百度",@"谷歌",@"必应",@"其他"]})
+    .seriesSet(@[item, item1]);
     
     return [options convertToDic];
 }
 
-
+#pragma mark - 绘制完成
+- (void)didDrawFinishedForChartView:(YKEChartsView *)chartView{
+    NSLog(@"绘制完成");
+}
 
 @end
 
