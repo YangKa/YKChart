@@ -25,11 +25,11 @@
     
     
     lineChartView = [[YKEChartsView alloc] initWithFrame:CGRectMake(0, 30, self.view.frame.size.width, 300) delegate:self];
-    [lineChartView drawChartWithOptions:[self options]];
+    [lineChartView drawChartWithOptions:[self option1]];
     [self.view addSubview:lineChartView];
     
     
-    pieNestChartView = [[YKEChartsView alloc] initWithFrame:CGRectMake(0, 350, self.view.frame.size.width, 250) delegate:self];
+    pieNestChartView = [[YKEChartsView alloc] initWithFrame:CGRectMake(0, 350, self.view.frame.size.width, 200) delegate:self];
     [pieNestChartView drawChartWithOptions:[self option1]];
     [self.view addSubview:pieNestChartView];
     
